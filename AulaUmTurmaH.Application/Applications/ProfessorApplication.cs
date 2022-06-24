@@ -2,11 +2,6 @@
 using AulaUmTurmaH.Application.DTOs;
 using AulaUmTurmaH.Application.Interfaces;
 using AulaUmTurmaH.Infra.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AulaUmTurmaH.Application.Applications
 {
@@ -29,8 +24,40 @@ namespace AulaUmTurmaH.Application.Applications
                 Email = professor.Email,
                 Excluido = professor.Excluido,
                 Id = professor.Id,
-                Nome = professor.Nome
+                Nome = professor.Nome,
+                RGP = professor.RGP
             }).ToList();
+        }
+
+        public void Insert(ProfessorDTO professorDTO)
+        {
+            var professor = new Professor 
+            {
+                CPF = professorDTO.CPF,
+                DataNascimento = professorDTO.DataNascimento,
+                Email = professorDTO.Email,
+                Nome = professorDTO.Nome,
+                RGP = professorDTO.RGP
+            };
+            professor.InserirDadosBase();
+            _professorRepository.Insert(professor);
+        }
+
+        public void Update(ProfessorDTO professorDTO)
+        {
+            var professor = _professorRepository.GetById(professorDTO.Id);
+            professor.RGP = professorDTO.RGP;
+            professor.CPF = professorDTO.CPF;
+            professor.DataNascimento = professorDTO.DataNascimento;
+            professor.Email = professorDTO.Email;
+            professor.Nome = professorDTO.Nome;
+            _professorRepository.Update(professor);
+        }
+
+        public void Delete(int id)
+        {
+            Professor professor = _professorRepository.GetById(id);
+            _professorRepository.Delete(professor);
         }
     }
 }

@@ -8,6 +8,7 @@ namespace AulaUmTurmaH.Application.DTOs
 {
     public class ProfessorDTO
     {
+        public string RGP { get; set; }
         public string Nome { get; set; }
 
         public string Email { get; set; }

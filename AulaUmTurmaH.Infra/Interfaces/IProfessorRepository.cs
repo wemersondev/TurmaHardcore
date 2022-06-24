@@ -10,8 +10,9 @@ namespace AulaUmTurmaH.Infra.Interfaces
     public interface IProfessorRepository
     {
         List<Professor> GetAll();
-        void Insert(Professor professorDTO);
-        void Update(Professor professorDTO);
+        void Insert(Professor professor);
+        void Update(Professor professor);
         void Delete(Professor id);
+        Professor GetById(int id);
     }
 }
