@@ -14,6 +14,8 @@ namespace AulaUmTurmaH.Application.DTOs
 
         public DateTime DataNascimento { get; set; }
 
+        public string RGP { get; set; }
+
         public string CPF { get; set; }
 
         public int Id { get; set; }

@@ -13,5 +13,11 @@ namespace AulaUmTumaH.Domain.Entities
         public DateTime CriadoEm { get; set; }
 
         public bool Excluido { get; set; }
+
+        public void InserirDadosBase()
+        {
+            CriadoEm = DateTime.Now;
+            Excluido = false;
+        }
     }
 }

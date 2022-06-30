@@ -17,9 +17,10 @@ namespace AulaUmTurmaH.Infra.Repositories
             _context = context;
         }
 
-        public void Delete(Professor id)
+        public void Delete(Professor professor)
         {
-            throw new NotImplementedException();
+            _context.Remove(professor);
+            _context.SaveChanges();
         }
 
         public List<Professor> GetAll()
@@ -27,14 +28,21 @@ namespace AulaUmTurmaH.Infra.Repositories
             return _context.Professores.ToList();
         }
 
-        public void Insert(Professor professorDTO)
+        public Professor GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Professores.Find(id);
         }
 
-        public void Update(Professor professorDTO)
+        public void Insert(Professor professor)
         {
-            throw new NotImplementedException();
+            _context.Professores.Add(professor);
+            _context.SaveChanges();
+        }
+
+        public void Update(Professor professor)
+        {
+            _context.Professores.Update(professor);
+            _context.SaveChanges();
         }
     }
 }
