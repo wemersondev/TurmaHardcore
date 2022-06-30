@@ -16,5 +16,7 @@ namespace AulaUmTurmaH.Infra.Context
         }
 
         public DbSet<Professor> Professores { get; set; }
+        public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Coordenador> Coordenadores { get; set; }
     }
 }
