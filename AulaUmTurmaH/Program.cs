@@ -19,6 +19,16 @@ builder.Services.AddDbContext<AulaUmTurmaHContext>(options => { options.UseSqlSe
 
 builder.Services.AddScoped<IProfessorApplication, ProfessorApplication>();
 builder.Services.AddScoped<IProfessorRepository, ProfessorRepository>();
+
+builder.Services.AddScoped<IAlunoApplication, AlunoApplication>();
+builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
+
+builder.Services.AddScoped<IEscolaApplication, EscolaApplication>();
+builder.Services.AddScoped<IEscolaRepository, EscolaRepository>();
+
+builder.Services.AddScoped<ICoordenadorApplication, CoordenadorApplication>();
+builder.Services.AddScoped<ICoordenadorRepository, CoordenadorRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
