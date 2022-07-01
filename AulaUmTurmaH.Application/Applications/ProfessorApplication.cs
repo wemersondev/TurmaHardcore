@@ -2,11 +2,6 @@
 using AulaUmTurmaH.Application.DTOs;
 using AulaUmTurmaH.Application.Interfaces;
 using AulaUmTurmaH.Infra.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AulaUmTurmaH.Application.Applications
 {
@@ -21,10 +16,10 @@ namespace AulaUmTurmaH.Application.Applications
         public List<ProfessorDTO> GetAll()
         {
             List<Professor> professores = _professorRepository.GetAll();
-            return professores.Select(professor => new ProfessorDTO
+            return professores.Select(professor => new ProfessorDTO 
             {
                 CPF = professor.CPF,
-                CriadoEm = professor.CriadoEm,
+                CriadoEm  = professor.CriadoEm,
                 DataNascimento = professor.DataNascimento,
                 Email = professor.Email,
                 Excluido = professor.Excluido,
@@ -36,7 +31,7 @@ namespace AulaUmTurmaH.Application.Applications
 
         public void Insert(ProfessorDTO professorDTO)
         {
-            var professor = new Professor
+            var professor = new Professor 
             {
                 CPF = professorDTO.CPF,
                 DataNascimento = professorDTO.DataNascimento,
