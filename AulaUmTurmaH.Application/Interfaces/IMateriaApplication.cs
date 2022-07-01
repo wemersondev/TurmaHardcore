@@ -10,8 +10,8 @@ namespace AulaUmTurmaH.Application.Interfaces
     public interface IMateriaApplication
     {
         List<MateriaDTO> GetAll();
-        //void Insert(MateriaDTO materiaDTO);
-        //void Update(MateriaDTO materiaDTO);
-        //void Delete(int id);
+        void Insert(MateriaDTO materiaDTO);
+        void Update(MateriaDTO materiaDTO);
+        void Delete(int id);
     }
 }

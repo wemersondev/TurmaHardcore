@@ -1,4 +1,5 @@
 ﻿using AulaUmTumaH.Domain.Entities;
+using AulaUmTurmaH.Application.DTOs;
 using AulaUmTurmaH.Application.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,21 +23,24 @@ namespace AulaUmTurmaH.Controllers
         }
 
         [HttpPost]
-        public IActionResult Insert()
+        public IActionResult Insert(MateriaDTO materiaDTO)
         {
-            return Ok(_materiaApplication.GetAll());
+            _materiaApplication.Insert(materiaDTO);
+            return Ok();
         }
 
         [HttpPut]
-        public IActionResult Update()
+        public IActionResult Update(MateriaDTO materiaDTO)
         {
-            return Ok(_materiaApplication.GetAll());
+            _materiaApplication.Update(materiaDTO);
+            return Ok();
         }
 
         [HttpDelete]
-        public IActionResult Delete()
+        public IActionResult Delete(int id)
         {
-            return Ok(_materiaApplication.GetAll());
+            _materiaApplication.Delete(id);
+            return Ok();
         }
 
 

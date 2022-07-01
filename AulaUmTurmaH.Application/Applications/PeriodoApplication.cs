@@ -23,6 +23,7 @@ namespace AulaUmTurmaH.Application.Applications
             List<Periodo> periodos = _periodoRepository.GetAll();
             return periodos.Select(periodo => new PeriodoDTO 
             {
+                Id = periodo.Id,
                 DataInicio = periodo.DataInicio,
                 DataFim = periodo.DataFim
             }).ToList();

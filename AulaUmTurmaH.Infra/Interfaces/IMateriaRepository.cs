@@ -13,5 +13,6 @@ namespace AulaUmTurmaH.Infra.Interfaces
         void Insert(Materia materiaDTO);
         void Update(Materia materiaDTO);
         void Delete(Materia id);
+        Materia GetById(int id);
     }
 }
