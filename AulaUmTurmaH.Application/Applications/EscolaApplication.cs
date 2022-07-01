@@ -24,7 +24,7 @@ namespace AulaUmTurmaH.Application.Applications
                 CNPJ = escola.CNPJ,
                 Bairro = escola.Bairro,
                 Cidade = escola.Cidade,
-                CriadoEm = escola.CriadoEM,
+                CriadoEm = escola.CriadoEm,
                 Estado = escola.Estado,
                 Excluido = escola.Excluido,
                 HorarioFuncionamento = escola.HorarioFuncionamento,
