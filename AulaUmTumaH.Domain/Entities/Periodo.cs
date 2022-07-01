@@ -8,10 +8,10 @@ namespace AulaUmTumaH.Domain.Entities
 {
     public class Periodo : EntityBase
     {        
+        public int Id { get; set; }
 
         public DateTime DataInicio { get; set; }
 
         public DateTime DataFim { get; set; }
-
     }
 }

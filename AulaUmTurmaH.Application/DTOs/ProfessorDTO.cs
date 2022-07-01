@@ -13,9 +13,7 @@ namespace AulaUmTurmaH.Application.DTOs
 
         public string Email { get; set; }
 
-        public DateTime DataNascimento { get; set; }
-
-        public string RGP { get; set; }
+        public DateTime DataNascimento { get; set; }        
 
         public string CPF { get; set; }
 

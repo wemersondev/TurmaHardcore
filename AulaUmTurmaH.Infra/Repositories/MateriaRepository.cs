@@ -17,9 +17,10 @@ namespace AulaUmTurmaH.Infra.Repositories
             _context = context;
         }
 
-        public void Delete(Materia id)
+        public void Delete(Materia materia)
         {
-            throw new NotImplementedException();
+            _context.Remove(materia);
+            _context.SaveChanges();
         }
 
         public List<Materia> GetAll()
@@ -27,14 +28,21 @@ namespace AulaUmTurmaH.Infra.Repositories
             return _context.Materias.ToList();
         }
 
-        public void Insert(Materia MateriaDTO)
+        public Materia GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Materias.Find(id);
         }
 
-        public void Update(Materia MateriaDTO)
+        public void Insert(Materia materia)
         {
-            throw new NotImplementedException();
+            _context.Materias.Add(materia);
+            _context.SaveChanges();
+        }
+
+        public void Update(Materia materia)
+        {
+            _context.Materias.Update(materia);
+            _context.SaveChanges();
         }
     }
 }
