@@ -1,11 +1,13 @@
 ﻿using AulaUmTumaH.Domain.Entities;
 using AulaUmTurmaH.Application.DTOs;
 using AulaUmTurmaH.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AulaUmTurmaH.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class MateriaController : ControllerBase

@@ -1,9 +1,11 @@
 ﻿using AulaUmTurmaH.Application.DTOs;
 using AulaUmTurmaH.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AulaUmTurmaH.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CoordenadorController : ControllerBase
