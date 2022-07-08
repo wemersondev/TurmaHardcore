@@ -1,4 +1,5 @@
 ﻿using AulaUmTumaH.Domain.Entities;
+using AulaUmTurmaH.Infra.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,5 +22,11 @@ namespace AulaUmTurmaH.Infra.Context
         public DbSet<Escola> Escolas { get; set; }
         public DbSet<Materia> Materias { get; set; } 
         public DbSet<Periodo> Periodos { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(EscolaConfiguration).Assembly);
+        }
     }
 }

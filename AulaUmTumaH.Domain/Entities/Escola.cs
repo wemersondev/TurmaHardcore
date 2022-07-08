@@ -26,6 +26,8 @@
 
         public bool Excluido { get; set; }
 
+        public ICollection<Coordenador> Coordenadores { get; set; }
+
         public void InserirDadosBase()
         {
             CriadoEm = DateTime.Now;
