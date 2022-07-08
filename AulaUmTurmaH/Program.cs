@@ -1,5 +1,6 @@
 using AulaUmTurmaH.Application.Applications;
 using AulaUmTurmaH.Application.Interfaces;
+using AulaUmTurmaH.Configurations;
 using AulaUmTurmaH.Infra.Context;
 using AulaUmTurmaH.Infra.Interfaces;
 using AulaUmTurmaH.Infra.Repositories;
@@ -16,6 +17,8 @@ builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AulaUmTurmaHContext>(options => { options.UseSqlServer(connectionString); });
+
+builder.Services.AddIdentityConfig(builder.Configuration);
 
 builder.Services.AddScoped<IProfessorApplication, ProfessorApplication>();
 builder.Services.AddScoped<IProfessorRepository, ProfessorRepository>();
