@@ -32,6 +32,12 @@ builder.Services.AddScoped<IEscolaRepository, EscolaRepository>();
 builder.Services.AddScoped<ICoordenadorApplication, CoordenadorApplication>();
 builder.Services.AddScoped<ICoordenadorRepository, CoordenadorRepository>();
 
+builder.Services.AddScoped<IPeriodoApplication, PeriodoApplication>();
+builder.Services.AddScoped<IPeriodoRepository, PeriodoRepository>();
+
+builder.Services.AddScoped<IMateriaApplication, MateriaApplication>();
+builder.Services.AddScoped<IMateriaRepository, MateriaRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

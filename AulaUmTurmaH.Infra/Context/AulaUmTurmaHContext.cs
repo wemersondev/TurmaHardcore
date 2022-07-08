@@ -19,5 +19,7 @@ namespace AulaUmTurmaH.Infra.Context
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Coordenador> Coordenadores { get; set; }
         public DbSet<Escola> Escolas { get; set; }
+        public DbSet<Materia> Materias { get; set; } 
+        public DbSet<Periodo> Periodos { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace AulaUmTurmaH.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll() 
+        public IActionResult GetAll()
         {
             return Ok(_professorApplication.GetAll());
         }
