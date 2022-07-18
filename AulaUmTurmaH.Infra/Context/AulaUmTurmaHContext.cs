@@ -27,6 +27,9 @@ namespace AulaUmTurmaH.Infra.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(EscolaConfiguration).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(MateriaConfiguration).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AlunoConfiguration).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(PeriodoConfiguration).Assembly);
         }
     }
 }
