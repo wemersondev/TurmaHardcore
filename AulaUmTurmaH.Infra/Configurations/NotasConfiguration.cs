@@ -9,11 +9,17 @@ using System.Threading.Tasks;
 
 namespace AulaUmTurmaH.Infra.Configurations
 {
-    public class AlunoConfiguration : IEntityTypeConfiguration<Aluno>
+    public class NotaConfiguration : IEntityTypeConfiguration<Nota>
     {
-        public void Configure(EntityTypeBuilder<Aluno> builder)
-        {
+        public void Configure(EntityTypeBuilder<Nota> builder)
+        {          
                 
+
+            //builder
+            //    .HasMany(p => p.Notas)
+            //    .WithMany(p => p.Avaliacoes)
+            //    .UsingEntity(j => j.ToTable("PostTags"));
+
 
 
         }

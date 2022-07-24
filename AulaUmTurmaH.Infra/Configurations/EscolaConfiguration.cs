@@ -15,6 +15,7 @@ namespace AulaUmTurmaH.Infra.Configurations
         {
             builder.Property(prop => prop.Nome)
                 .HasMaxLength(200);
+            
         }
     }
 }

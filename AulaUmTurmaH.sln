@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AulaUmTurmaH", "AulaUmTurmaH\AulaUmTurmaH.csproj", "{04DE7FA1-7569-4CD6-A5DE-ACC7EE0EC4DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AulaUmTurmaH", "AulaUmTurmaH\AulaUmTurmaH.csproj", "{04DE7FA1-7569-4CD6-A5DE-ACC7EE0EC4DC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - WebApi", "0 - WebApi", "{D223D0CD-06A3-4885-8B8E-1E4713C4A1C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AulaUmTumaH.Domain", "AulaUmTumaH.Domain\AulaUmTumaH.Domain.csproj", "{A5CCBE68-19B9-4758-933B-A76B67219874}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AulaUmTumaH.Domain", "AulaUmTumaH.Domain\AulaUmTumaH.Domain.csproj", "{A5CCBE68-19B9-4758-933B-A76B67219874}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{790A95D6-C5F4-4D46-BDC0-AD13CE1FBDA2}"
 EndProject
@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infra", "2 - Infra", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{A7653B19-3B4F-4336-84D4-28B733475D5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AulaUmTurmaH.Application", "AulaUmTurmaH.Application\AulaUmTurmaH.Application.csproj", "{E0DEC4B0-562C-4FE5-8B39-2A55BE669384}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AulaUmTurmaH.Application", "AulaUmTurmaH.Application\AulaUmTurmaH.Application.csproj", "{E0DEC4B0-562C-4FE5-8B39-2A55BE669384}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AulaUmTurmaH.Infra", "AulaUmTurmaH.Infra\AulaUmTurmaH.Infra.csproj", "{C51C724D-A71D-4786-923D-4570B171AF32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AulaUmTurmaH.Infra", "AulaUmTurmaH.Infra\AulaUmTurmaH.Infra.csproj", "{C51C724D-A71D-4786-923D-4570B171AF32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
