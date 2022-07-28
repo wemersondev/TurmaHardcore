@@ -6,6 +6,7 @@
         public Aluno Alunos { get; set; }
         public int MateriaId { get; set; }
         public Materia Materias { get; set; }
-        public int Ano { get; set; }        
+        public int Ano { get; set; }
+        public ICollection<Nota> Notas { get; set; }
     }
 }

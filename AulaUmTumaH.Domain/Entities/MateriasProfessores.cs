@@ -10,5 +10,6 @@ namespace AulaUmTumaH.Domain.Entities
         public Materia Materias { get; set; }
         public int Ano { get; set; }
         public PeriodoEnum Periodo { get; set; }
+        public ICollection<Nota> Notas { get; set; }
     }
 }

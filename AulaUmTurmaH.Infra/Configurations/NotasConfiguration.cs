@@ -12,13 +12,17 @@ namespace AulaUmTurmaH.Infra.Configurations
     public class NotaConfiguration : IEntityTypeConfiguration<Nota>
     {
         public void Configure(EntityTypeBuilder<Nota> builder)
-        {          
-                
+        {
+            builder.HasOne(c => c.Matricula)
+                .WithMany(c => c.Notas)
+                .HasForeignKey(c => c.MatriculaId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            //builder
-            //    .HasMany(p => p.Notas)
-            //    .WithMany(p => p.Avaliacoes)
-            //    .UsingEntity(j => j.ToTable("PostTags"));
+
+            builder.HasOne(c => c.MateriasProfessores)
+                .WithMany(c => c.Notas)
+                .HasForeignKey(c => c.MateriasProfessoresId)
+                .OnDelete(DeleteBehavior.Restrict);
 
 
 

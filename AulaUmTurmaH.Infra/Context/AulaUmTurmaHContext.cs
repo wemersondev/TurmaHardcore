@@ -1,6 +1,7 @@
 ﻿using AulaUmTumaH.Domain.Entities;
 using AulaUmTurmaH.Infra.Configurations;
 using Microsoft.EntityFrameworkCore;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace AulaUmTurmaH.Infra.Context
 {
@@ -22,8 +23,17 @@ namespace AulaUmTurmaH.Infra.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(EscolaConfiguration).Assembly);            
+
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                entityType.GetForeignKeys()
+                    .Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade)
+                    .ToList()
+                    .ForEach(fk => fk.DeleteBehavior = DeleteBehavior.Restrict);
+            }
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

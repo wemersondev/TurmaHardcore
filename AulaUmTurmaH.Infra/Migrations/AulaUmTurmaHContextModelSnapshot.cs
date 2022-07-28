@@ -322,7 +322,7 @@ namespace AulaUmTurmaH.Infra.Migrations
                     b.HasOne("AulaUmTumaH.Domain.Entities.Escola", "Escola")
                         .WithMany()
                         .HasForeignKey("EscolaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Escola");
@@ -333,7 +333,7 @@ namespace AulaUmTurmaH.Infra.Migrations
                     b.HasOne("AulaUmTumaH.Domain.Entities.Escola", "Escola")
                         .WithMany("Coordenadores")
                         .HasForeignKey("EscolaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Escola");
@@ -344,13 +344,13 @@ namespace AulaUmTurmaH.Infra.Migrations
                     b.HasOne("AulaUmTumaH.Domain.Entities.Materia", "Materias")
                         .WithMany()
                         .HasForeignKey("MateriaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("AulaUmTumaH.Domain.Entities.Professor", "Professores")
                         .WithMany()
                         .HasForeignKey("ProfessorId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Materias");
@@ -363,13 +363,13 @@ namespace AulaUmTurmaH.Infra.Migrations
                     b.HasOne("AulaUmTumaH.Domain.Entities.Aluno", "Alunos")
                         .WithMany()
                         .HasForeignKey("AlunoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("AulaUmTumaH.Domain.Entities.Materia", "Materias")
                         .WithMany()
                         .HasForeignKey("MateriaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Alunos");
@@ -380,25 +380,35 @@ namespace AulaUmTurmaH.Infra.Migrations
             modelBuilder.Entity("AulaUmTumaH.Domain.Entities.Nota", b =>
                 {
                     b.HasOne("AulaUmTumaH.Domain.Entities.MateriasProfessores", "MateriasProfessores")
-                        .WithMany()
+                        .WithMany("Notas")
                         .HasForeignKey("MateriasProfessoresId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("AulaUmTumaH.Domain.Entities.Matricula", "Matriculas")
-                        .WithMany()
+                    b.HasOne("AulaUmTumaH.Domain.Entities.Matricula", "Matricula")
+                        .WithMany("Notas")
                         .HasForeignKey("MatriculaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("MateriasProfessores");
 
-                    b.Navigation("Matriculas");
+                    b.Navigation("Matricula");
                 });
 
             modelBuilder.Entity("AulaUmTumaH.Domain.Entities.Escola", b =>
                 {
                     b.Navigation("Coordenadores");
+                });
+
+            modelBuilder.Entity("AulaUmTumaH.Domain.Entities.MateriasProfessores", b =>
+                {
+                    b.Navigation("Notas");
+                });
+
+            modelBuilder.Entity("AulaUmTumaH.Domain.Entities.Matricula", b =>
+                {
+                    b.Navigation("Notas");
                 });
 #pragma warning restore 612, 618
         }
