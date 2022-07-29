@@ -1,9 +1,11 @@
 using AulaUmTurmaH.Application.Applications;
 using AulaUmTurmaH.Application.Interfaces;
+using AulaUmTurmaH.Application.Validations;
 using AulaUmTurmaH.Configurations;
 using AulaUmTurmaH.Infra.Context;
 using AulaUmTurmaH.Infra.Interfaces;
 using AulaUmTurmaH.Infra.Repositories;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,7 +37,7 @@ builder.Services.AddScoped<ICoordenadorRepository, CoordenadorRepository>();
 
 builder.Services.AddScoped<IMateriaApplication, MateriaApplication>();
 builder.Services.AddScoped<IMateriaRepository, MateriaRepository>();
-
+builder.Services.AddValidatorsFromAssemblyContaining<EscolaValidation>(ServiceLifetime.Transient);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
