@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PampsPersonalTrainer.Helpers
+namespace AulaUmTurmaH.Presentation.Helpers
 {
     public class Pages
     {

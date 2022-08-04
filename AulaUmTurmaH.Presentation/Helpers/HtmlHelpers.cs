@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 
-namespace PampsPersonalTrainer.Helpers
+namespace AulaUmTurmaH.Presentation.Helpers
 {
     public static class HtmlHelpers
     {
